@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moodscapes - Your personalized music and ambient sound experience based on your mood">
+    <meta name="keywords" content="music, mood, ambient sounds, relaxation, focus, energy">
+    <title>Moodscapes - Your Mood. Your Music. Your Universe.</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Star Background -->
+    <div class="stars"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-content">
+            <a href="/" class="logo">Moodscapes</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#how-to">How To</a>
+                <button class="btn medium-btn login-btn">
+                    <span class="visually-hidden">Login to Moodscapes</span>
+                    Login
+                </button>
+                <button class="btn medium-btn register-btn">
+                    <span class="visually-hidden">Register for Moodscapes</span>
+                    Register
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="main-header">
+        <h1>Moodscapes</h1>
+        <p>Your Mood. Your Music. Your Universe.</p>
+    </header>
+
+    <!-- How To Section -->
+    <section class="how-to-section" id="how-to">
+        <h2>How To Use Moodscapes</h2>
+        <div class="steps-container">
+            <article class="step-card">
+                <i class="fas fa-music"></i>
+                <h3>Choose Your Mode</h3>
+                <p>Select between Music or Ambient sounds</p>
+            </article>
+            <article class="step-card">
+                <i class="fas fa-heart"></i>
+                <h3>Select Moods</h3>
+                <p>Pick the moods that match your vibe</p>
+            </article>
+            <article class="step-card">
+                <i class="fas fa-play"></i>
+                <h3>Enjoy</h3>
+                <p>Let the music match your moment</p>
+            </article>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <i class="fas fa-star"></i>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- Mode Selection -->
+    <section class="mode-selection">
+        <div class="mode-toggles">
+            <fieldset class="toggle-group">
+                <legend>Sound Mode Selection</legend>
+                <button class="btn medium-btn active" data-mode="music">Music Mode</button>
+                <button class="btn medium-btn" data-mode="ambient">Ambient Mode</button>
+            </fieldset>
+            <fieldset class="toggle-group">
+                <legend>Display Mode Selection</legend>
+                <button class="btn medium-btn active" data-display="text">Text Mode</button>
+                <button class="btn medium-btn" data-display="emoji">Emoji Mode</button>
+            </fieldset>
+        </div>
+    </section>
+
+    <!-- Player Section -->
+    <section class="player-section">
+        <div class="player-card">
+            <div class="visualizer-container">
+                <div id="audioVisualizer"></div>
+            </div>
+            
+            <div class="player-controls">
+                <progress id="audioProgress" value="0" max="100" class="audio-progress">0%</progress>
+                
+                <div class="control-buttons">
+                    <button class="btn medium-btn control-btn">
+                        <span class="visually-hidden">Shuffle Playlist</span>
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button class="btn medium-btn control-btn">
+                        <span class="visually-hidden">Previous Track</span>
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="btn medium-btn control-btn play-btn" id="playBtn">
+                        <span class="visually-hidden">Play or Pause Track</span>
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="btn medium-btn control-btn">
+                        <span class="visually-hidden">Next Track</span>
+                        <i class="fas fa-forward"></i>
+                    </button>
+                    <button class="btn medium-btn control-btn">
+                        <span class="visually-hidden">Repeat Track</span>
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100" aria-label="Volume Control">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <i class="fas fa-star"></i>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- Mood Selection -->
+    <section class="mood-selection">
+        <h2>Choose Your Mood Journey</h2>
+        <div class="mood-categories">
+            <div class="mood-card">
+                <h3>Energetic</h3>
+                <div class="sub-moods">
+                    <button class="btn medium-btn mood-btn" data-mood="Pumped">Pumped</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Dancing">Dancing</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Motivated">Motivated</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Powerful">Powerful</button>
+                </div>
+            </div>
+            <div class="mood-card">
+                <h3>Relaxed</h3>
+                <div class="sub-moods">
+                    <button class="btn medium-btn mood-btn" data-mood="Calm">Calm</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Peaceful">Peaceful</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Serene">Serene</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Tranquil">Tranquil</button>
+                </div>
+            </div>
+            <div class="mood-card">
+                <h3>Contemplative</h3>
+                <div class="sub-moods">
+                    <button class="btn medium-btn mood-btn" data-mood="Reflective">Reflective</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Thoughtful">Thoughtful</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Introspective">Introspective</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Meditative">Meditative</button>
+                </div>
+            </div>
+            <div class="mood-card">
+                <h3>Melancholic</h3>
+                <div class="sub-moods">
+                    <button class="btn medium-btn mood-btn" data-mood="Wistful">Wistful</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Nostalgic">Nostalgic</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Bittersweet">Bittersweet</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Pensive">Pensive</button>
+                </div>
+            </div>
+            <div class="mood-card">
+                <h3>Joyful</h3>
+                <div class="sub-moods">
+                    <button class="btn medium-btn mood-btn" data-mood="Elated">Elated</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Euphoric">Euphoric</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Gleeful">Gleeful</button>
+                    <button class="btn medium-btn mood-btn" data-mood="Ecstatic">Ecstatic</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <section class="footer-section">
+                <h3>Moodscapes</h3>
+                <p>Your personal musical universe</p>
+            </section>
+            <section class="footer-section">
+                <h4>Quick Links</h4>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#privacy">Privacy</a>
+                </nav>
+            </section>
+            <section class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" class="social-btn">
+                        <span class="visually-hidden">Follow us on Twitter</span>
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <span class="visually-hidden">Follow us on Instagram</span>
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <span class="visually-hidden">Follow us on Facebook</span>
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
